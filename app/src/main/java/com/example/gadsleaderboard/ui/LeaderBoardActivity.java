@@ -1,8 +1,10 @@
-package com.example.gadsleaderboard;
+package com.example.gadsleaderboard.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.gadsleaderboard.R;
 
 public class LeaderBoardActivity extends AppCompatActivity {
 
