@@ -12,6 +12,7 @@ import com.example.gadsleaderboard.ui.SkillIqFragment;
 public class PagerAdapter extends FragmentStateAdapter {
 
     Fragment mFragment;
+    int page;
     public PagerAdapter(Fragment fragment) {
         super(fragment);
     }
@@ -21,7 +22,7 @@ public class PagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         // Return a NEW fragment instance in createFragment(int)
         Bundle args = new Bundle();
-        if (position%2==0){
+        if (position==0){
             mFragment = new LearningFragment();
             args.putInt(LearningFragment.ARG_ID, position + 1);
         }
@@ -35,6 +36,6 @@ public class PagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 100;
+        return 2;
     }
 }
