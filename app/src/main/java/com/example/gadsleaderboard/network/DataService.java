@@ -1,5 +1,6 @@
 package com.example.gadsleaderboard.network;
 
+import com.example.gadsleaderboard.model.LearningData;
 import com.example.gadsleaderboard.model.SkillIqData;
 
 import java.util.List;
@@ -11,5 +12,8 @@ public interface DataService {
 
     @GET ("/api/skilliq")
     Call<List<SkillIqData>> getSkillIqData();
+
+    @GET ("/api/hours")
+    Call<List<LearningData>> getLearningData();
 
 }

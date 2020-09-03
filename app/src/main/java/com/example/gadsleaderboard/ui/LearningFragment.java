@@ -1,16 +1,28 @@
 package com.example.gadsleaderboard.ui;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gadsleaderboard.R;
+import com.example.gadsleaderboard.adapter.LearningDataAdapter;
+import com.example.gadsleaderboard.model.LearningData;
+import com.example.gadsleaderboard.network.ClientInstance;
+import com.example.gadsleaderboard.network.DataService;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +33,7 @@ public class LearningFragment extends Fragment {
 
     // the fragment initialization parameters.
     public static final String ARG_ID = "learning";
+    private RecyclerView learningRv;
 
     private String mParam;
 
@@ -46,9 +59,7 @@ public class LearningFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam = getArguments().getString(ARG_ID);
-        }
+
     }
 
     @Override
@@ -61,8 +72,35 @@ public class LearningFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         Bundle args = getArguments();
-//        ((TextView) view.findViewById(android.R.id.text1))
-//                .setText(Integer.toString(args.getInt(ARG_OBJECT)));
+        learningRv= view.findViewById(R.id.learning_rv);
+        showleaders();
+    }
+
+    private void showleaders() {
+        DataService service =
+                ClientInstance.getClientInstance()
+                        .create(DataService.class);
+
+        Call<List<LearningData>> call = service.getLearningData();
+        call.enqueue(new Callback<List<LearningData>>() {
+            @Override
+            public void onResponse(Call<List<LearningData>> call, Response<List<LearningData>> response) {
+                Toast.makeText(getActivity(), "Connected", Toast.LENGTH_SHORT).show();
+                generateData(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<List<LearningData>> call, Throwable t) {
+                Toast.makeText(getActivity(), "Something went wrong...", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+
+    private void generateData(List<LearningData> body) {
+        LearningDataAdapter adapter = new LearningDataAdapter(body);
+        learningRv.setLayoutManager(new LinearLayoutManager(getActivity()));
+        learningRv.setAdapter(adapter);
     }
 
 }
