@@ -13,6 +13,4 @@ public class SkillIQViewHolder extends RecyclerView.ViewHolder {
     public void bindSkillData(){
 
     }
-
-
 }
