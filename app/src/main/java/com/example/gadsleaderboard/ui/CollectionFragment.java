@@ -16,11 +16,14 @@ import com.example.gadsleaderboard.adapter.PagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import org.jetbrains.annotations.NotNull;
+
 
 public class CollectionFragment extends Fragment {
 
     PagerAdapter mPagerAdapter;
     ViewPager2 viewPager;
+    String title;
 
     @Nullable
     @Override
@@ -39,8 +42,17 @@ public class CollectionFragment extends Fragment {
 
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) ->
-                         tab.setText("OBJECT " + (position + 1))
+                        setTabTitle(tab, position)
         ).attach();
+    }
+
+    @NotNull
+    private TabLayout.Tab setTabTitle(TabLayout.Tab tab, int position) {
+        if(position==0){
+            return tab.setText("Learning Leaders");
+        }
+        else return tab.setText("Skill IQ Leaders");
+
     }
 
 }
