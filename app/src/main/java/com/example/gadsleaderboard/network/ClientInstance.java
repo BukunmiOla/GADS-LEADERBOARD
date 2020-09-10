@@ -19,9 +19,9 @@ public class ClientInstance {
         return httpClient.build();
     }
 
-    public static Retrofit getClientInstance() {
+    public static Retrofit getClientInstance(String baseUrl) {
         return new Retrofit.Builder()
-                .baseUrl("https://gadsapi.herokuapp.com")
+                .baseUrl(baseUrl)
                 .client(getHttpClient())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

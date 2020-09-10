@@ -81,7 +81,7 @@ public class SkillIqFragment extends Fragment {
 
     private void showSkillIq() {
         DataService service =
-                ClientInstance.getClientInstance()
+                ClientInstance.getClientInstance("https://gadsapi.herokuapp.com")
                         .create(DataService.class);
 
         Call<List<SkillIqData>> call = service.getSkillIqData();

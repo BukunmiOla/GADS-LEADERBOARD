@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/dialog_bg"
     android:layout_height="wrap_content">
 
     <ImageView
@@ -24,6 +25,7 @@
         android:layout_marginBottom="16dp"
         android:text="Submission not Successful"
         android:textSize="20dp"
+        android:textColor="@color/colorGrey"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

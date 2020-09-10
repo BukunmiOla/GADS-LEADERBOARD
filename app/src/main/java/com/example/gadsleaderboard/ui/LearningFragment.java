@@ -78,7 +78,7 @@ public class LearningFragment extends Fragment {
 
     private void showleaders() {
         DataService service =
-                ClientInstance.getClientInstance()
+                ClientInstance.getClientInstance("https://gadsapi.herokuapp.com")
                         .create(DataService.class);
 
         Call<List<LearningData>> call = service.getLearningData();
