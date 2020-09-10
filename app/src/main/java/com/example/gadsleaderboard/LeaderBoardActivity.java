@@ -8,12 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.gadsleaderboard.adapter.PagerAdapter;
-import com.example.gadsleaderboard.ui.SystemUIManager;
 
 public class LeaderBoardActivity extends AppCompatActivity {
-    PagerAdapter mPagerAdapter;
-    ViewPager2 viewPager;
-    SystemUIManager manager = new SystemUIManager();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,12 +24,5 @@ public class LeaderBoardActivity extends AppCompatActivity {
         });
 
     }
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus) {
-            manager.hideSystemUI(getWindow().getDecorView());
-        }
-        else manager.showSystemUI(getWindow().getDecorView());
-    }
+
 }
