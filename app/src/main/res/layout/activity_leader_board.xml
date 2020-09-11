@@ -15,16 +15,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/leaderBoard"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/submission_btn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:background="@drawable/neutral_button_bg"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
         android:text="@string/submit"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.851"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@id/textView" />
 
@@ -33,6 +43,7 @@
         android:name="com.example.gadsleaderboard.ui.CollectionFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
