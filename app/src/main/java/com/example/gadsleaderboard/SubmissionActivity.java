@@ -97,7 +97,7 @@ public class SubmissionActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<PostRequest>> call, Throwable t) {
-                dialog.setContentView(R.layout.submission_successful_dialog);
+                dialog.setContentView(R.layout.submission_failure_dialog);
             }
         });
         clearInputs();
