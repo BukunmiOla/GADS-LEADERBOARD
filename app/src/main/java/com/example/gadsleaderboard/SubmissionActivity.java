@@ -80,7 +80,7 @@ public class SubmissionActivity extends AppCompatActivity {
     private void postSubmission(Dialog dialog) {
 
         DataService service =
-                ClientInstance.getClientInstance("https://docs.google.com")
+                ClientInstance.getClientInstance("https://docs.google.com/forms/d/e/")
                         .create(DataService.class);
 
         PostRequest postRequest = createEntry();
