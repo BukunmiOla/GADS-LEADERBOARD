@@ -19,7 +19,7 @@ public class LearningLeadersViewHolder extends RecyclerView.ViewHolder {
 
     public void bindData(LearningData learningLeader) {
         nameTv.setText(learningLeader.getName());
-        String detail = learningLeader.getHours()+ "," + learningLeader.getCountry()+".";
+        String detail = learningLeader.getHours()+ " learning hours, " + learningLeader.getCountry()+".";
         detailTv.setText(detail);
     }
 }

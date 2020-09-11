@@ -3,6 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/edit_text_bg"
     android:layout_height="wrap_content">
 
     <ImageView
@@ -21,6 +23,8 @@
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:layout_marginTop="15dp"
+        android:textColor="@color/colorGrey"
+        android:textStyle="bold"
         android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/badge_img"
@@ -31,9 +35,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="5dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorGrey"
         app:layout_constraintBottom_toBottomOf="@id/badge_img"
         app:layout_constraintEnd_toEndOf="@id/name_tv"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/name_tv"
-        app:layout_constraintTop_toBottomOf="@id/name_tv" />
+        app:layout_constraintTop_toBottomOf="@id/name_tv"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

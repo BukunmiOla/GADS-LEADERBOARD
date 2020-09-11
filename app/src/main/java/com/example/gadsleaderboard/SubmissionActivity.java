@@ -92,7 +92,7 @@ public class SubmissionActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<PostRequest>> call, Response<List<PostRequest>> response) {
                 dialog.setContentView(R.layout.submission_successful_dialog);
-
+                clearInputs();
             }
 
             @Override
@@ -100,7 +100,7 @@ public class SubmissionActivity extends AppCompatActivity {
                 dialog.setContentView(R.layout.submission_failure_dialog);
             }
         });
-        clearInputs();
+
     }
     private PostRequest createEntry(){
         PostRequest PostRequest = new PostRequest();

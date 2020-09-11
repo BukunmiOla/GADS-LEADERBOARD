@@ -20,7 +20,7 @@ public class SkillIQViewHolder extends RecyclerView.ViewHolder {
 
     public void bindSkillData(SkillIqData skilliq){
         nameTv.setText(skilliq.getName());
-        String detail = skilliq.getScore()+","+skilliq.getCountry();
+        String detail = skilliq.getScore()+" skill IQ Score, "+skilliq.getCountry();
         detailTv.setText(detail);
 
     }
